@@ -25,7 +25,8 @@ export default function Home() {
     
     setIsCreating(true);
     try {
-      const res = await fetch("/api/create-room", {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "";
+      const res = await fetch(`${apiUrl}/api/create-room`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -53,7 +54,8 @@ export default function Home() {
 
     setIsJoining(true);
     try {
-      const res = await fetch("/api/join-room", {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "";
+      const res = await fetch(`${apiUrl}/api/join-room`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

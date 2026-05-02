@@ -27,7 +27,7 @@ export default function RoomPage() {
     }
     setPlayerName(name);
 
-    socket = io(process.env.NEXT_PUBLIC_SOCKET_URL || "http://localhost:4000");
+    socket = io(process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000");
 
     socket.on("connect", () => {
       console.log("Connected to socket server");
