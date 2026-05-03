@@ -7,7 +7,9 @@ const cors = require('cors');
 const Room = require('./models/Room');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "*", // or your frontend domain
+}));
 const server = http.createServer(app);
 
 const io = new Server(server, {
